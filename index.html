@@ -5,22 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timed Quiz</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
   <header>
-    <!-- high score and timer -->
+      <div class="high-score">
+        <a href="./high-score.html">View High Scores</a>
+        </div>
+      <div class="timer">timer</div> 
   </header>
   <main>
-    <div class="question"></div>
+    <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus cum nesciunt molestias fugiat non sed cumque, iste ducimus corrupti, itaque magni, quis nobis laborum in asperiores voluptatem! Inventore, rem?</div>
     <div class="answers">
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <div>
+          <li>
+            <button class="btn answer-btn" data-num="1">answer 4</button>
+          </li>
+        </div>
+        <li><button class="btn answer-btn" data-num="2">answer 1</button></li>
+        <li><button class="btn answer-btn" data-num="3">answer 2</button></li>
+        <li><button class="btn answer-btn" data-num="4">answer 3</button></li>
       </ul>
     </div>
-    <div>right or wrong</div>
+    <div class="grade">right or wrong</div>
   </main>
 </body>
 </html>

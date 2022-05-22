@@ -1,0 +1,58 @@
+body{
+  box-sizing: border-box;
+};
+
+header {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+header div {
+  width: 49%;
+}
+
+.high-score a{
+  color:#8a2be2;
+  font-size: 20px;
+  padding-top: 30px;
+  text-decoration: none;
+}
+
+.question {
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.answers {
+  font-size: 18px;
+}
+
+.btn {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: pink;
+}
+
+.answer-btn {
+  width: 150px;
+}
+
+
+.grade {
+  display: flex;
+  color: grey;
+  font-style: italic;
+  font-size: 30px;
+  border-top: 2px grey solid;
+}
+.stored-score {
+  background-color: rgb(161, 132, 168);
+}
