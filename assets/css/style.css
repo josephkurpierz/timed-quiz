@@ -1,34 +1,31 @@
 body{
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 };
 
-header {
-  padding: 20px;
+.header {
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
+  padding: 10px;
+  align-items:center;
   justify-content: space-between;
 }
 
-header div {
-  width: 49%;
-}
 
-.high-score a{
+
+.header a{
   color:#8a2be2;
   font-size: 20px;
   padding-top: 30px;
   text-decoration: none;
 }
 
-.question {
-  font-size: 30px;
-  font-weight: bold;
-
-}
-
-.answers {
-  font-size: 18px;
+.question-box{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: left;
+  width:60%;
+  margin: 20px auto;
 }
 
 .btn {
@@ -39,6 +36,7 @@ header div {
 
 .btn:hover {
   background-color: pink;
+  cursor: pointer;
 }
 
 .answer-btn {

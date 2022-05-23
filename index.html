@@ -8,27 +8,26 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <header>
-      <div class="high-score">
-        <a href="./high-score.html">View High Scores</a>
-        </div>
-      <div class="timer">timer</div> 
-  </header>
-  <main>
+
+  <!-- high score link and timer -->
+  <div class="header">
+    <span class="high-score"><a href="./high-score.html">View High Scores</a></span>
+    <span class="timer">timer</span> 
+  </div>
+
+  <!-- question box -->
+  <main class="question-box">
     <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus cum nesciunt molestias fugiat non sed cumque, iste ducimus corrupti, itaque magni, quis nobis laborum in asperiores voluptatem! Inventore, rem?</div>
     <div class="answers">
-      <ul>
-        <div>
-          <li>
-            <button class="btn answer-btn" data-num="1">answer 4</button>
-          </li>
-        </div>
-        <li><button class="btn answer-btn" data-num="2">answer 1</button></li>
-        <li><button class="btn answer-btn" data-num="3">answer 2</button></li>
-        <li><button class="btn answer-btn" data-num="4">answer 3</button></li>
-      </ul>
+      <div><button class="btn answer-btn" data-num="1">answer 1</button></div>
+      <div><button class="btn answer-btn" data-num="2">answer 2</button></div>
+      <div><button class="btn answer-btn" data-num="3">answer 3</button></div>
+      <div><button class="btn answer-btn" data-num="4">answer 4</button></div>
     </div>
-    <div class="grade">right or wrong</div>
+
+    <!-- declaration of correct or wrong upon answer -->
+    <div class="grade">Correct or Wrong</div>
   </main>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
