@@ -4,16 +4,16 @@
   padding: 0px;
 }
 
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  display:flex;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
   flex-wrap: wrap;
 }
 
 .header {
   display: flex;
   padding: 10px;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
@@ -39,11 +39,11 @@ body{
 
 .start-btn {
   padding: 10px 20px;
-  width:120px
+  width: 120px
 }
 
-.header a{
-  color:#8a2be2;
+.header a {
+  color: #8a2be2;
   font-size: 16px;
   padding-top: 30px;
   text-decoration: none;
@@ -51,7 +51,7 @@ body{
 
 .question {
   font-size: 14px;
-  font-weight:bolder;
+  font-weight: bolder;
   margin-bottom: 10px;
 }
 
@@ -60,12 +60,12 @@ body{
   display: flex;
   flex-flow: column nowrap;
   align-items: left;
-  width:60%;
+  width: 60%;
   margin: 20px auto;
 }
 
 .hide {
-  display:none;
+  display: none;
 }
 
 .btn {
@@ -91,22 +91,22 @@ body{
 }
 
 .initials {
-  display:flex;
+  display: flex;
   font-size: 16px;
   align-items: center;
 }
 
-.input-box{
-  width:200px;
+.input-box {
+  width: 200px;
   border: solid 1px blue;
-  height:26px;
-  margin:0 10px
+  height: 26px;
+  margin: 0 10px
 }
 
 .submit-btn {
-  margin:0;
-  padding:2px 15px;
-  font-size:12px
+  margin: 0;
+  padding: 2px 15px;
+  font-size: 12px
 }
 
 .grade {
@@ -117,6 +117,12 @@ body{
   border-top: 2px lightgrey solid;
   margin-top: 20px;
 }
+
 .stored-score {
-  background-color: rgb(161, 132, 168);
+  margin: 15px 0;
+  width:400px;
+}
+
+.stored-score {
+  background-color: rgb(193, 182, 196);
 }
