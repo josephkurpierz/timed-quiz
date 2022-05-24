@@ -55,7 +55,8 @@ body{
   margin-bottom: 10px;
 }
 
-.question-box{
+.question-box,
+.card {
   display: flex;
   flex-flow: column nowrap;
   align-items: left;
@@ -84,6 +85,29 @@ body{
   width: 150px;
 }
 
+.done-title,
+.final {
+  margin: 10px 0;
+}
+
+.initials {
+  display:flex;
+  font-size: 16px;
+  align-items: center;
+}
+
+.input-box{
+  width:200px;
+  border: solid 1px blue;
+  height:26px;
+  margin:0 10px
+}
+
+.submit-btn {
+  margin:0;
+  padding:2px 15px;
+  font-size:12px
+}
 
 .grade {
   display: flex;
