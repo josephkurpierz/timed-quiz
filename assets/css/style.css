@@ -43,10 +43,11 @@ body {
 }
 
 .header a {
-  color: #8a2be2;
+  color: #ba62c5;
   font-size: 16px;
   padding-top: 30px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .question {
@@ -69,7 +70,7 @@ body {
 }
 
 .btn {
-  background-color: blue;
+  background-color: rgb(63, 17, 116);
   color: white;
   border-radius: 5px;
   padding: 5px;
@@ -77,8 +78,9 @@ body {
 }
 
 .btn:hover {
-  background-color: pink;
+  background-color: rgb(173, 69, 194);
   cursor: pointer;
+  border: rgb(173,69,194) solid 2px;
 }
 
 .answer-btn {
@@ -124,5 +126,5 @@ body {
 }
 
 .stored-score {
-  background-color: rgb(193, 182, 196);
+  background-color: rgb(204, 192, 204);
 }
