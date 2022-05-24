@@ -15,18 +15,22 @@
     <div class="timer"><span class="timer-title">Time:</span><span class="time">0</span> 
     </div>
   </div>
+
   <!-- front page -->
-  <main class="front-page">
-    <h1 class="front-page-header show">Coding Quiz Challenge</h1>
+  <main class="front-page hide">
+    <h1 class="front-page-header title">Coding Quiz Challenge</h1>
     <p class="front-page-paragraph">Try to answer the following code-related questions
       within the time limit.<br> Keep in mind that incorrect answers will penalize your
       score/time <br>by ten seconds!
     </p>
     <div class="start-btn-box"><button class="btn start-btn">Start Quiz</button></div>
   </main>
+
   <!-- question box -->
   <main class="question-box hide">
-    <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus cum nesciunt molestias fugiat non sed cumque, iste ducimus corrupti, itaque magni, quis nobis laborum in asperiores voluptatem! Inventore, rem?</div>
+    <div class="question title">
+      <h1>A very useful tool used during development and debugging for printing content to the debugger is:</h1>
+    </div>
     <div class="answers">
       <div><button class="btn answer-btn" data-num="1">answer 1</button></div>
       <div><button class="btn answer-btn" data-num="2">answer 2</button></div>
@@ -36,6 +40,13 @@
 
     <!-- declaration of correct or wrong upon answer -->
     <div class="grade">Correct or Wrong</div>
+  </main>
+
+  <!-- completed quiz page -->
+  <main class="completed ">
+    <div class="done">
+      <h1 class="done-title">All done!</h1>
+    </div>
   </main>
   <script src="./assets/js/script.js"></script>
 </body>
