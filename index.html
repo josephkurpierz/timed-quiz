@@ -14,12 +14,12 @@
   <!-- high score link and timer -->
   <div class="header">
     <span class="high-score"><a href="./high-score.html">View high scores</a></span>
-    <div class="timer"><span class="timer-title">Time:</span><span class="time">0</span>
+    <div class="timer"><span class="timer-title">Time:</span><span id="time"class="time">0</span>
     </div>
   </div>
 
   <!-- front page -->
-  <main class="front-page hide">
+  <main class="front-page">
     <h1 class="front-page-header title">Coding Quiz Challenge</h1>
     <p class="front-page-paragraph">Try to answer the following code-related questions
       within the time limit.<br> Keep in mind that incorrect answers will penalize your
@@ -29,23 +29,20 @@
   </main>
 
   <!-- question box -->
-  <main class="question-box card hide">
-    <div class="question title">
-      <h1>A very useful tool used during development and debugging for printing content to the debugger is:</h1>
+  <main class="question-box card">
+    <h1 id ="question" class="question"></h1>
+    <div class="choices">
+      <div class="choice hide"><button class="btn choice-btn" data-num="1"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" data-num="2"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" data-num="3"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" data-num="4"></button></div>
     </div>
-    <div class="answers">
-      <div><button class="btn answer-btn" data-num="1">answer 1</button></div>
-      <div><button class="btn answer-btn" data-num="2">answer 2</button></div>
-      <div><button class="btn answer-btn" data-num="3">answer 3</button></div>
-      <div><button class="btn answer-btn" data-num="4">answer 4</button></div>
-    </div>
-
     <!-- declaration of correct or wrong upon answer -->
-    <div class="grade">Correct or Wrong</div>
+    <div class="grade hide"></div>
   </main>
 
   <!-- completed quiz page -->
-  <main class="completed card ">
+  <main class="completed card hide">
     <div class="done">
       <h1 class="done-title">All done!</h1>
       <div class="final">Your final score is <span class="score">22.</span></div>
@@ -54,7 +51,7 @@
         <span>
           <div class="input-box"></div>
         </span>
-        <button class="submit-btn btn">Submit</button>
+        <button  class="submit-btn btn">Submit</button>
       </div>
     </div>
   </main>
