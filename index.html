@@ -32,10 +32,10 @@
   <main class="question-box card">
     <h1 id ="question" class="question"></h1>
     <div class="choices">
-      <div class="choice hide"><button class="btn choice-btn" data-num="1"></button></div>
-      <div class="choice hide"><button class="btn choice-btn" data-num="2"></button></div>
-      <div class="choice hide"><button class="btn choice-btn" data-num="3"></button></div>
-      <div class="choice hide"><button class="btn choice-btn" data-num="4"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" id="1"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" id="2"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" id="3"></button></div>
+      <div class="choice hide"><button class="btn choice-btn" id="4"></button></div>
     </div>
     <!-- declaration of correct or wrong upon answer -->
     <div class="grade hide"></div>
@@ -49,7 +49,7 @@
       <div class="initials">
         <span>Enter initials:</span>
         <span>
-          <div class="input-box"></div>
+          <input class="input-box" type="text" name="initials"/>
         </span>
         <button  class="submit-btn btn">Submit</button>
       </div>

@@ -1,11 +1,12 @@
-
+var questionBoxEl = document.querySelector(".question-box")
 var choiceBtnEl = document.querySelector(".choice-btn");
 var questionEl = document.querySelector("#question");
 var timeEl = document.querySelector("#time");
 var frontPageEl = document.querySelector(".front-page");
-var questionBoxEl = document.querySelector(".question-box");
-
-
+var currentQuestion = 0;
+var choiceBoxEl = document.querySelector(".choices");
+var maxTime = 60;
+//question array to pull questions from
 var questionArrEl =[
   {
     question: "how many ducks go quack?",
@@ -15,8 +16,18 @@ var questionArrEl =[
   {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     choices: ["devTools", "a friend", "gitbash", "github"],
-    correct: 0,
+    correct: 1,
   },
+  {
+    question: "how helpful are the classes in bootcamp?",
+    choices: ["a little" , "none", "like bubbles in space", "more confusing than anything"],
+    correct: 3,
+  },
+  {
+    question: "What does HTML stand for?",
+    choices:["hypertext markup language", "cascading stylesheets", "I like turtles", "programmers in the wild"],
+    correct: 1
+  }
 ]
 
 // front page card
@@ -24,17 +35,30 @@ var questionArrEl =[
 // hide front page
 var startButtonHandler = function(){
   frontPageEl.className = "hide";
+  startTimer();
   renderQuestion(0);//change for dynamics
+  renderChoices(currentQuestion);
 };
+var startTimer = function(){
+  var timer = maxTime;
+  var quizTimer = setInterval(function(){
+  
+    if(timer<=0){
+      clearInterval(quizTimer);
+    }
+    timer-=1;  
+  }, 1000);
+}
 
 var renderQuestion = function(i){
-  questionEl.innerHTML="<h1 class='question title'>"+ questionArrEl[i].question+"</h1>";
+  questionEl.innerHTML="<h1 id='question' class='question'>"+ questionArrEl[i].question+"</h1>";
   questionBoxEl.appendChild(questionEl);
 };
 
-var renderChoices = function (i){
+var renderChoices = function (currentQuestion){
   for (var i =0; i<questionArrEl.length; i++){
-    choiceButtonEl.textContent
+    choiceBtnEl.innerHTML = "<div class='choices'><div class='choice'><button class='btn choice-btn' data-num='1'>"+questionArrEl[currentQuestion].choices[i];+"</button></div></div>";
+    choiceBoxEl.appendChild(choiceBtnEl);
   }
 }
 // question card
