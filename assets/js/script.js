@@ -1,12 +1,14 @@
 var startButtonEl = document.querySelector(".start-btn");
 var questionBoxEl = document.querySelector(".question-box")
-var choiceBtnEl = document.querySelector(".choice-btn");
+var choiceButtonEl = document.querySelector(".choice-btn");
 var questionEl = document.querySelector("#question");
 var timeEl = document.querySelector("#time");
 var frontPageEl = document.querySelector(".front-page");
 var currentQuestion = 0;
 var choiceBoxEl = document.querySelector(".choices");
 var timerCount = 60;
+var gradeEl = document.querySelector(".grade");
+
 //question array to pull questions from
 var questionArrEl =[
   {
@@ -32,24 +34,30 @@ var questionArrEl =[
 ]
 
 // front page card
-// recognize start-btn click
-// hide front page
 var startButtonHandler = function(){
   frontPageEl.className = "hide";
   startTimer();
-  renderQuestion(currentQuestion);//change for dynamics
-  renderChoices(currentQuestion);
+  startQuiz();
 };
 
 var startTimer = function(){
   var timeInterval = setInterval(function(){
-    if (timerCount>0){
+    if (timerCount>=0){
       timeEl.textContent=timerCount;
       timerCount--;
     } else
     clearInterval(timeInterval);
   },1000);
 };
+
+//initiate quiz by pulling questions and choices from arrays
+var startQuiz = function(){
+  // for ( var i =0; i<questionArrEl.length; i++){
+  renderQuestion(currentQuestion);//change for dynamics
+  renderChoices(currentQuestion);
+  currentQuestion++;
+  // };
+}
 
 var renderQuestion = function(currentQuestion){
   questionEl.innerHTML="<h1 id='question' class='question'>"+ questionArrEl[currentQuestion].question+"</h1>";
@@ -58,14 +66,32 @@ var renderQuestion = function(currentQuestion){
 
 var renderChoices = function (currentQuestion){
   for (var i =0; i<questionArrEl.length; i++){
-    var newButtonEl = document.createElement("button");
-    newButtonEl.innerHTML = "<div class='choices'><div class='choice'><button class='btn choice-btn' data-num='1'>"+questionArrEl[currentQuestion].choices[currentQuestion];+"</button></div></div>";
-    choiceBoxEl.appendChild(newButtonEl);
+    choiceButtonEl = document.createElement("button");
+    choiceButtonEl.innerHTML = "<div class='choices'><div class='choice'><button class='btn choice-btn' id="+ i +">"+questionArrEl[currentQuestion].choices[i];+"</button></div></div>";
+    choiceBoxEl.appendChild(choiceButtonEl);
   };
 }
 
-var answerHandler = function(){
-
+var answerHandler = function(event){
+  var targetEl = event.target;
+  var choice = targetEl.getAttribute("data-num");
+  console.log(choice);
+  if(choice === questionArrEl[currentQuestion].correct){
+    gradeEl = document.createElement("div");
+    //display correct
+  } else{
+    timerCount=timerCount-10;
+    //display wrong
+  }
+  currentQuestion++
+  if(currentQuestion < questionArrEl.length){
+    renderQuestion(currentQuestion);
+    renderChoices(currentQuestion);
+  } else{
+    var currentScore=timerCount;
+    //go to complete page
+  }
+  // var selectedChoice = choiceButtonEl.getElementBy
 }
 // question card
 // start timer
@@ -88,4 +114,4 @@ var answerHandler = function(){
 
 
 startButtonEl.addEventListener("click",startButtonHandler);
-choiceBoxEl.addEventListener("click", answerHandler);
+choiceButtonEl.addEventListener("click", answerHandler);
