@@ -1,3 +1,4 @@
+var startButtonEl = document.querySelector(".start-btn");
 var questionBoxEl = document.querySelector(".question-box")
 var choiceBtnEl = document.querySelector(".choice-btn");
 var questionEl = document.querySelector("#question");
@@ -5,7 +6,7 @@ var timeEl = document.querySelector("#time");
 var frontPageEl = document.querySelector(".front-page");
 var currentQuestion = 0;
 var choiceBoxEl = document.querySelector(".choices");
-var maxTime = 60;
+var timerCount = 60;
 //question array to pull questions from
 var questionArrEl =[
   {
@@ -36,30 +37,35 @@ var questionArrEl =[
 var startButtonHandler = function(){
   frontPageEl.className = "hide";
   startTimer();
-  renderQuestion(0);//change for dynamics
+  renderQuestion(currentQuestion);//change for dynamics
   renderChoices(currentQuestion);
 };
-var startTimer = function(){
-  var timer = maxTime;
-  var quizTimer = setInterval(function(){
-  
-    if(timer<=0){
-      clearInterval(quizTimer);
-    }
-    timer-=1;  
-  }, 1000);
-}
 
-var renderQuestion = function(i){
-  questionEl.innerHTML="<h1 id='question' class='question'>"+ questionArrEl[i].question+"</h1>";
+var startTimer = function(){
+  var timeInterval = setInterval(function(){
+    if (timerCount>0){
+      timeEl.textContent=timerCount;
+      timerCount--;
+    } else
+    clearInterval(timeInterval);
+  },1000);
+};
+
+var renderQuestion = function(currentQuestion){
+  questionEl.innerHTML="<h1 id='question' class='question'>"+ questionArrEl[currentQuestion].question+"</h1>";
   questionBoxEl.appendChild(questionEl);
 };
 
 var renderChoices = function (currentQuestion){
   for (var i =0; i<questionArrEl.length; i++){
-    choiceBtnEl.innerHTML = "<div class='choices'><div class='choice'><button class='btn choice-btn' data-num='1'>"+questionArrEl[currentQuestion].choices[i];+"</button></div></div>";
-    choiceBoxEl.appendChild(choiceBtnEl);
-  }
+    var newButtonEl = document.createElement("button");
+    newButtonEl.innerHTML = "<div class='choices'><div class='choice'><button class='btn choice-btn' data-num='1'>"+questionArrEl[currentQuestion].choices[currentQuestion];+"</button></div></div>";
+    choiceBoxEl.appendChild(newButtonEl);
+  };
+}
+
+var answerHandler = function(){
+
 }
 // question card
 // start timer
@@ -81,4 +87,5 @@ var renderChoices = function (currentQuestion){
 // retrieve high scores from local storage
 
 
-document.addEventListener("click",startButtonHandler);
+startButtonEl.addEventListener("click",startButtonHandler);
+choiceBoxEl.addEventListener("click", answerHandler);
