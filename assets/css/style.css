@@ -129,3 +129,7 @@ body {
 .hide {
   display: none;
 }
+
+.show {
+  display: flex;
+}
