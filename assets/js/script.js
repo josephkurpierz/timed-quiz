@@ -84,8 +84,6 @@ var renderChoices = function (currentQuestion) {
 var answerHandler = function (event) {
   var targetEl = event.target;
   var choiceIndex = targetEl.outerText;
-  console.log("this is choiceIndex" + choiceIndex);
-  console.log("this is correct answer" +questionArrEl[currentQuestion].correct);
   gradeEl = document.createElement("div");
   gradeEl.className = "grade"
   if (choiceIndex === questionArrEl[currentQuestion].correct) {
@@ -126,43 +124,25 @@ var hidePrevious = function () {
 };
 
 var scoreStorageArr=[];
+var scoreStorageObj;
 //submit button to store high score
 var endgame = function(){
-  scoreStorageArr =[
-    {
-      initials: inputEl.value,
-      score: currentScore,
+  retrievedScores = localStorage.getItem("highScores");
+  if (retrievedScores !== null){
+    retrievedArr = JSON.parse(retrievedScores);
+    for(var i=0; i < retrievedArr.length; i++){
+      scoreStorageArr.push(retrievedArr[i]);
     }
-  ];
+  }
+  scoreStorageObj = {
+    initials: inputEl.value,
+    score: currentScore,
+  };
+  scoreStorageArr.push(scoreStorageObj);
  
   localStorage.setItem("highScores", JSON.stringify(scoreStorageArr));
-  open("./high-score.html");
-  viewHighScores();
-}
-
-var viewHighScores = function(){
-  scoreStorage = JSON.parse(localStorage.getItem("highScores"));
-  //high score display highScoresArr
-}
-// question card
-// start timer
-// create and add question for the question card
-// add answer-btns to question card
-// recognize answer-btn click
-// subtract time for incorrect guess
-// display correct or wrong in footer
-// create and add another question
-
-// completed card
-// create and display completed card
-// display game score
-// recognize submit-btn click
-// store initials to localstorage as array
-// store score to local storage as array
-
-// high score page 
-// retrieve high scores from local storage
-
+  
+};
 
 startButtonEl.addEventListener("click", startButtonHandler);
 choiceBoxEl.addEventListener("click", answerHandler);

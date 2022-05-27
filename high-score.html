@@ -10,14 +10,17 @@
 </head>
 
 <body>
-  <main class="card high-score-page">
+  <main id="high-score-page" class="card high-score-page">
     <h1>High Scores</h1>
-    <div class="stored-score">box with stored high score name and points </div>
+    <div id="stored-score" class="stored-score">
+      <ul id="score-list"><li id="score"></li></ul>
+    </div>
     <div class="clear-back">
-      <button class="btn back-btn">Go back</button>
-      <button class="btn clear-btn">Clear high scores</button>
+      <button id="back-btn" class="btn back-btn">Go back</button>
+      <button id="clear-btn" class="btn clear-btn">Clear high scores</button>
     </div>
   </main>
+  <script src="./assets/js/highScoreScript.js"></script>
 </body>
 
 </html>
