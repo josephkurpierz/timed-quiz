@@ -20,7 +20,7 @@ No installation needed other than an internet browser on a computational device 
 
 [deployed web page](https://josephkurpierz.github.io/timed-quiz/)
 
-![Landing page screenshot](./assets/images/landing-page)
+![Landing page screenshot](./assets/images/landing-page.png)
 
 To use this app, click on start quiz to begin.  Answer a series of multiple choice questions. Time is your score, so choose quickly, but be careful because wrong answers subtract time from your counter.  Once all questions have been answered, you will add your initials and score to the high score table by clicking on submit.  To see the high score table, there is a link in the top left corner that will let you see how you stack up.  While viewing the high score table you can choose to either go back to the game and try to improve upon your score, or you can clear all high scores if you feel defeated.
 
