@@ -86,14 +86,8 @@ var answerHandler = function (event) {
   var choiceIndex = targetEl.outerText;
   gradeEl = document.createElement("div");
   gradeEl.className = "grade"
-  if (choiceIndex === questionArrEl[currentQuestion].correct) {
-    //gradeEl.textContent="Correct!";
-    //questionBoxEl.appendChild(gradeEl);
-    // wanted to 'questionBoxEl.removeChild(gradeEl);' after an interval but ran out of time
-  } else {
-    timerCount = timerCount - 10;
-    //gradeEl.textContent="Wrong!";
-    //questionBoxEl.appendChild(gradeEl);
+  if (choiceIndex !== questionArrEl[currentQuestion].correct) {
+      timerCount = timerCount - 10;
   }
   currentQuestion++
   hidePrevious();
